@@ -53,7 +53,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Calculator**
+- **Add/remove book**
 - **User Interface**
 - **React**
 
