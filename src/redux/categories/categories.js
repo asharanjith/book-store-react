@@ -1,15 +1,15 @@
 const categories = [];
-const CHECK_CATEGORY = 'categories/categories /CHECK_CATEGORY';
+const CHECK_STATUS = 'categories/categories /CHECK_STATUS';
 
-export const checkCategory = (category) => ({
-  type: CHECK_CATEGORY,
+export const checksStatus = (category) => ({
+  type: CHECK_STATUS,
   payload: category,
 });
 
 const categoriesReducer = (state = categories, action) => {
   switch (action.type) {
-    case CHECK_CATEGORY:
-      return [...state, action.payload];
+    case CHECK_STATUS:
+      return 'Under Construction';
     default:
       return state;
   }
