@@ -8,8 +8,8 @@ const Booklist = () => {
   const Booklist = useSelector((state) => state.books);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBooks(), []);
-  });
+    dispatch(fetchBooks());
+  }, [dispatch]);
   return (
     <div>
       {Booklist.map((book) => (
