@@ -7,7 +7,7 @@ const FormInput = () => {
   const [data, setData] = useState({
     title: '',
     author: '',
-    category: 'Action',
+    category: 'Fiction',
   });
   const dispatch = useDispatch();
   const changeHandler = (e) => {
@@ -24,7 +24,6 @@ const FormInput = () => {
       ...data,
     };
     dispatch(addBook(newBook));
-    setData({ title: '', author: '' });
   };
   return (
     <div>

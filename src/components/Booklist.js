@@ -5,20 +5,20 @@ import FormInput from './FormInput';
 import { fetchBooks } from '../redux/books/books';
 
 const Booklist = () => {
-  const Booklist = useSelector((state) => state.books);
+  const books = useSelector((state) => state.book);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
   return (
     <div>
-      {Booklist.map((book) => (
+      {books.map((book) => (
         <Books
           key={Math.random()}
+          type={book.category}
           title={book.title}
           author={book.author}
           id={book.item_id}
-          type={book.category}
         />
       ))}
       <FormInput />

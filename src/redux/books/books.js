@@ -8,16 +8,16 @@ const baseURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/book
 
 export const fetchBooks = createAsyncThunk(
   SHOW_BOOKS,
-  async (_args, { dispatch }) => {
+  async (args, { dispatch }) => {
     const { data } = await axios.get(baseURL);
-    const books = Object.keys(data).map((key) => {
-      const book = data[key][0];
+    const newbooks = Object.keys(data).map((key) => {
+      const books = data[key][0];
       return {
         item_id: key,
-        ...book,
+        ...books,
       };
     });
-    dispatch({ type: SHOW_BOOKS, payload: books });
+    dispatch({ type: SHOW_BOOKS, payload: newbooks });
   },
 );
 
@@ -42,7 +42,7 @@ const booksReducer = (state = books, action) => {
     case REMOVE_BOOK:
       return state.filter((book) => book.item_id !== action.payload);
     case SHOW_BOOKS:
-      return action.payload;
+      return [...action.payload];
     default:
       return state;
   }
