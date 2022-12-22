@@ -136,11 +136,9 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Will update soon...
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Add categoreis section in the form input and display books according to the same]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

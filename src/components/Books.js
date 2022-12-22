@@ -5,10 +5,10 @@ import { removeBook } from '../redux/books/books';
 
 const Books = (props) => {
   const {
-    title, author, id, type,
+    type, title, author, id,
   } = props;
   const dispatch = useDispatch();
-  const removeBookHandler = (id) => {
+  const removeBookHandler = () => {
     dispatch(removeBook(id));
   };
   return (
@@ -16,7 +16,7 @@ const Books = (props) => {
       <p>{type}</p>
       <h3>{title}</h3>
       <p>{author}</p>
-      <button type="button" onClick={() => removeBookHandler(id)}>
+      <button type="button" onClick={removeBookHandler}>
         Remove Book
       </button>
     </div>
@@ -26,7 +26,7 @@ const Books = (props) => {
 Books.propTypes = {
   author: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };
 
