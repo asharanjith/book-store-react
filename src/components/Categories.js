@@ -9,9 +9,9 @@ const Categories = () => {
     dispatch(checksStatus());
   };
   return (
-    <div>
-      <h2>{categories}</h2>
-      <button type="submit" onClick={clickHandler}>
+    <div className="container">
+      <h1>{categories}</h1>
+      <button type="submit" onClick={clickHandler} className="primary-button">
         Check Status
       </button>
     </div>
