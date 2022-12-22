@@ -11,17 +11,30 @@ const Booklist = () => {
     dispatch(fetchBooks());
   }, [dispatch]);
   return (
-    <div>
-      {books.map((book) => (
-        <Books
-          key={Math.random()}
-          type={book.category}
-          title={book.title}
-          author={book.author}
-          id={book.item_id}
-        />
-      ))}
-      <FormInput />
+    <div className="container">
+      <div>
+        <ul className="books">
+          {books.map((book) => (
+
+            <Books
+              key={Math.random()}
+              type={book.category}
+              title={book.title}
+              author={book.author}
+              id={book.item_id}
+              currentChapter={book.progress.currentChapter}
+              progress={book.progress.completed}
+              percentage={book.percentage}
+            />
+
+          ))}
+        </ul>
+        <div className="horizontal-divider" />
+        <section>
+          <h2 className="form-title">ADD NEW BOOK</h2>
+          <FormInput />
+        </section>
+      </div>
     </div>
   );
 };

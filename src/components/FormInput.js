@@ -26,25 +26,27 @@ const FormInput = () => {
     dispatch(addBook(newBook));
   };
   return (
-    <div>
-      <form>
-        <input
-          type="text"
-          name="title"
-          value={data.title}
-          onChange={changeHandler}
-          placeholder="Book Title"
-        />
-        <input
-          type="text"
-          name="author"
-          value={data.author}
-          onChange={changeHandler}
-          placeholder="Author"
-        />
-        <button type="submit" onClick={submitHandler}>Add Book</button>
-      </form>
-    </div>
+
+    <form className="add-form">
+      <input
+        className="input title-input"
+        type="text"
+        name="title"
+        value={data.title}
+        onChange={changeHandler}
+        placeholder="Book Title"
+      />
+      <input
+        className="input author-input"
+        type="text"
+        name="author"
+        value={data.author}
+        onChange={changeHandler}
+        placeholder="Author"
+      />
+      <button type="submit" onClick={submitHandler} className="primary-button-big">ADD BOOK</button>
+    </form>
+
   );
 };
 
